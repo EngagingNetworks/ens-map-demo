@@ -25,7 +25,7 @@ L.Icon.Default.mergeOptions({
 
 
 const mapId = 'map'
-const mapBoxToken = 'pk.eyJ1IjoiaWFpbi1lbiIsImEiOiJja29rODR0cmswMW0zMndxbGEwcm9zOG0xIn0.-doK-o57yz3eppTNCCn4aA'
+const mapBoxToken = '{your mapbox token}'
 
 /**
 *	Tile options:
