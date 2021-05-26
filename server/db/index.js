@@ -27,9 +27,13 @@ let retryCount = 0
 const connect = async () => {
 
 
-	try{ 
+	try{
 
-		const connection = await mongoose.connect(`mongodb://mongo:${mongoPort}/${dbName}`, {
+		const mongoDomain = process.env.USE_DOCKER && process.env.USE_DOCKER.toLowerCase() == 'true' ? 'mongo' : 'localhost'
+
+		console.log(`mongodb://${mongoDomain}:${mongoPort}/${dbName}`)
+
+		const connection = await mongoose.connect(`mongodb://${mongoDomain}:${mongoPort}/${dbName}`, {
 		  useNewUrlParser: true,
 		  useUnifiedTopology: true,
 		  useFindAndModify: false,
