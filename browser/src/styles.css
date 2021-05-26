@@ -1,0 +1,122 @@
+/* typography */
+
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/crimsontext/v11/wlp2gwHKFkZgtmSR3NB0oRJfbwhT.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Unica One';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/unicaone/v8/DPEuYwWHyAYGVTSmalsRcd3e.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+    font-family: 'Crimson Text', serif;
+    font-size: 1em;
+}
+
+h1, h2, h3, button {
+	font-family: 'Unica One', cursive;
+	text-transform: uppercase;
+	color: #385e34;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2.25em;
+}
+
+h3 {
+	font-size: 1.75em;
+}
+
+
+/* layout */
+
+html {
+	height: 100%;
+}
+
+body {
+	background-color: #191a1a;
+	height: 100%;
+	margin: 0;
+}
+
+.crocLayout {
+	flex-grow: 1;
+	display: flex;
+}
+
+form {
+	background-color: white;
+	width: 600px;
+	padding: 0 1.5em;
+	box-sizing: border-box;
+}
+
+#map {
+	height: 100vh;
+	flex-grow: 1;
+}
+
+#map.leaflet-container {
+	background: #191a1a;
+}
+
+button {
+	background-color: #385e34;
+	color: white;
+	border: 0;
+	font-size: 3em;
+	padding: 0.25em 0.5em;
+}
+
+button:hover {
+	background-color: #599f5a;	
+}
+
+.en__field__input--select {
+	width: 250px;
+}
+
+.en__field--map-optin > .en__field__label {
+	display: block;
+	width: 100%;
+}
+
+.en__field--map-optin .en__field__item {
+	display: flex;
+}
+
+.en__field--map-optin .en__field__label--item {
+	margin-left: 0.5em;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+
+	.crocLayout {
+		flex-direction: column;
+	}
+
+	form {
+		order: 1;
+		width: 100%;
+	}
+
+	#map {
+		order: 2;
+	}
+
+}
