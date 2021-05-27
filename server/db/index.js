@@ -31,8 +31,6 @@ const connect = async () => {
 
 		const mongoDomain = process.env.USE_DOCKER && process.env.USE_DOCKER.toLowerCase() == 'true' ? 'mongo' : 'localhost'
 
-		console.log(`mongodb://${mongoDomain}:${mongoPort}/${dbName}`)
-
 		const connection = await mongoose.connect(`mongodb://${mongoDomain}:${mongoPort}/${dbName}`, {
 		  useNewUrlParser: true,
 		  useUnifiedTopology: true,
@@ -81,9 +79,12 @@ const connect = async () => {
 **/
 
 
-const addSupporters = (supporters = []) => {
+const addSupporters = async (supporters = []) => {
 
-	return Promise.all(
+	// make sure we are connected
+	await connect()
+
+	await Promise.all(
 		supporters.map(supporter => addSupporter(supporter))
 	)
 
