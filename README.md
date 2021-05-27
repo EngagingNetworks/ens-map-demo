@@ -49,6 +49,10 @@ Once the server has connected to MongoDB, loaded the points from ENS and geocode
 https://{server domain}:{SERVERPORT}/points
 
 
+### clearing the database
+You can empty the mongo DB database by running the command `npm run clear`
+
+
 ## browser
 
 We used webpack to compile some browser code using Leaflet JS, Axios and Babel to call the server and display the points on the map. It was based on the server running locally on https://localhost:3001. This has been provided for reference.
